@@ -2,6 +2,8 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: configmaptestapp
+  annotations:
+    configmap.reloader.stakater.com/reload: "app-config"
 spec:
   selector:
     matchLabels:
@@ -14,7 +16,8 @@ spec:
     spec:
       containers:
       - name: configmaptestapp
-        image: abhirockzz/configmaptestapp
+        image: stevekieu/configmaptestapp:latest
+        imagePullPolicy: Never
         volumeMounts:
         - mountPath: /config
           name: appconfig-data-volume

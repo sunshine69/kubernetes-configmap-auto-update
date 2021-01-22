@@ -2,8 +2,8 @@ apiVersion: v1
 kind: ConfigMap
 metadata:
   name: app-config
-  namespace: default
+  namespace: stevek-test
 data:
-  foo: bar
-  hello: world
+  foo: bar5
+  hello: world5
   john: doe
